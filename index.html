@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111827"><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="styles.css">
+<title>Local Deal Hunter</title></head>
+<body>
+<header class="top"><div><div class="brand">🦌 Local Deal Hunter</div><div class="sub">Live deals near your location</div></div><button id="locBtn" class="iconbtn">📍</button></header>
+<main><section class="hero"><h1>Find the cheapest nearby.</h1><p>Use your location to filter deals by area, then compare price, savings and distance.</p>
+<div class="search"><span>🔎</span><input id="search" placeholder="Search eggs, milk, gas, pizza…"></div></section>
+<div id="locationStatus" class="status">Location is off. Tap 📍 to find deals for your area.</div>
+<nav class="cats" id="cats"><button class="active" data-cat="all">All</button><button data-cat="food">🍔 Food</button><button data-cat="grocery">🛒 Grocery</button><button data-cat="gas">⛽ Gas</button><button data-cat="everyday">🏷️ Everyday</button></nav>
+<section class="controls"><strong id="resultCount">Deals</strong><select id="sort"><option value="price">Cheapest first</option><option value="distance">Closest first</option><option value="savings">Biggest savings</option></select></section>
+<section id="sourceStatus" class="source">Connecting to live price sources…</section><section id="deals" class="deals"></section></main>
+<footer><span>Local Deal Hunter</span><span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span></footer>
+<script src="app.js"></script></body></html>
