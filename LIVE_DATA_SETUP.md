@@ -1,20 +1,12 @@
-# Live-data setup
+# Live Data Setup
 
-This build uses the browser's location permission and is structured to request location-specific live grocery data.
+The app now tries two browser-accessible live/observed sources:
 
-## Current live connector
-- Nourish public price preview: `https://mynourish.app/api/v1/public/prices?lat=LAT&lng=LNG`
-- Nourish documents this endpoint as returning a small sample of real scraped grocery prices and supporting `lat`/`lng` filters.
-- The app does not invent prices when the live endpoint fails.
+1. Nourish public grocery preview using the user's latitude/longitude.
+2. Open Food Facts product search + Open Prices observations for the searched item.
 
-## Production connector
-For full catalog coverage, use a provider account/key on a server-side proxy. Never put a private API key directly in browser JavaScript.
+The app never uses fake sample prices.
 
-Good candidates include:
-- Nourish for store-level grocery prices.
-- Kroger's developer API for Kroger-family products/stores where applicable.
-- A licensed product/offer provider for broader retail coverage.
-- A licensed gas-price data provider for fuel.
+For broad U.S. retailer coverage (Walmart, Target, Kroger, Costco, etc.) and reliable current prices, add a commercial data provider such as ShopSavvy or another authorized retailer-price provider. API credentials should be kept on a server/serverless function rather than placed in public GitHub Pages JavaScript. ShopSavvy advertises product, pricing, and availability data across many retailers. citeturn0search0
 
-## Important
-There is no single free public API that legally provides every nearby US retailer's current price, stock, restaurant deal, and gas price. A real production app therefore needs multiple authorized data sources. Each provider's terms, rate limits, attribution and coverage must be followed.
+GitHub Pages can host the front end, but it cannot safely store private API secrets. A later production architecture can use GitHub Pages + a serverless API proxy.

@@ -1,33 +1,20 @@
-# Local Deal Hunter — Ready-to-publish prototype
+# Local Deal Hunter — Live Price Build
 
-This folder is the complete static web/PWA prototype.
+Local Deal Hunter uses the phone's location and live/observed price sources instead of fake sample prices.
 
-## Included
-- Mobile-first interface
-- Search
-- Food, grocery, gas, everyday categories
-- Sort by price, distance, savings
-- Browser location permission
-- Saved deals using local device storage
-- PWA manifest/service worker
-- Privacy Policy and Terms pages
+## Current live sources
 
-## Before calling it a production price-comparison app
-The current cards use clearly labeled sample data. Replace `sampleDeals` in `app.js` with data from legitimate APIs/feeds that you are authorized to use. Do not represent sample prices as live prices.
-
-## Free hosting
-Upload all files to a public static hosting service such as GitHub Pages, then enable Pages for the repository's main branch/root folder.
-
-## Production checklist
-1. Connect authorized live price/deal sources.
-2. Add real geocoding/maps if needed.
-3. Add retailer/source attribution and links.
-4. Test location permissions on Android and desktop.
-5. Update Privacy Policy and Terms to match every service actually used.
-6. Test on multiple screen sizes.
-7. Add analytics only if desired and disclose it in the privacy policy.
-8. Add monetization only after verifying the relevant provider's requirements.
-9. Package as an Android app only after the web version is stable.
+- Nourish public grocery preview: location-based grocery pricing when its public endpoint returns coverage.
+- Open Food Facts + Open Prices: product-name search followed by real price observations tied to physical shops and dates.
 
 ## Important
-This prototype is ready to upload as a website, but it is not yet a live price database. No app can honestly show current local prices without a current, authorized data source.
+
+No single free public API provides every current price for every U.S. grocery store, restaurant, gas station, and retailer. Commercial retailer-price APIs generally require an API key/account. For example, ShopSavvy provides retailer product, pricing, and availability data through its API. citeturn0search0
+
+Open Prices is crowdsourced and therefore should be presented as an observed price, not a guaranteed current shelf price. citeturn0search2
+
+This build deliberately does not invent prices when a live source has no coverage.
+
+## GitHub Pages
+
+Upload the files in this folder directly into the repository root. `index.html` must be in the root of the `main` branch.
