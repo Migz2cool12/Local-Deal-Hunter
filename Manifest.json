@@ -1,0 +1,10 @@
+{
+  "name": "Local Deal Hunter",
+  "short_name": "Deal Hunter",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111111",
+  "description": "Find nearby deals and compare live prices.",
+  "icons": []
+}
